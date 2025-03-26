@@ -1,20 +1,30 @@
 import os
+import random
 from dotenv import load_dotenv
 import telegram
 
 
-def send_message_to_channel(message: str):
+def send_photo_to_channel(photo_path: str):
     load_dotenv()
     token = os.getenv("telegram_token")
     channel_id = "@nasaphotosdev"
 
     bot = telegram.Bot(token=token)
-    bot.send_message(chat_id=channel_id, text=message)
+
+    with open(photo_path, "rb") as photo:
+        bot.send_photo(chat_id=channel_id, photo=photo)
 
 
 def main():
-    message_text = "test"
-    send_message_to_channel(message_text)
+    images_folder = "images"
+    images = os.listdir(images_folder)
+
+    if images:
+        random_image = random.choice(images)
+        image_path = os.path.join(images_folder, random_image)
+        send_photo_to_channel(image_path)
+    else:
+        print("ошибка")
 
 
 if __name__ == "__main__":
