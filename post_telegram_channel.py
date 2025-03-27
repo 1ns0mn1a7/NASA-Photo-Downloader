@@ -7,8 +7,8 @@ import telegram
 
 load_dotenv()
 
-TOKEN = os.getenv("telegram_token")
-CHANNEL_ID = "@nasaphotosdev"
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 
 bot = telegram.Bot(token=TOKEN)
 

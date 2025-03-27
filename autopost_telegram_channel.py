@@ -8,8 +8,8 @@ import telegram
 
 load_dotenv()
 
-TOKEN = os.getenv("telegram_token")
-CHANNEL_ID = "@nasaphotosdev"
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 DEFAULT_INTERVAL = int(os.getenv("PUBLISH_INTERVAL", 4 * 60 * 60))
 
 bot = telegram.Bot(token=TOKEN)
