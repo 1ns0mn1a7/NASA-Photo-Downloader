@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ### Настройки параметров окружения
 Для работы скрипта необходимо настроить файл .env со следующими параметрами:
-* `API_KEY` - ваш ключ [NASA API](https://api.nasa.gov/).
+* `NASA_API_KEY` - ваш ключ [NASA API](https://api.nasa.gov/).
 * `TELEGRAM_TOKEN` - токен вашего Telegram-бота. Получите его у [BotFather](https://core.telegram.org/bots#botfather) и следуйте инструкциям для создания нового бота.
 * `TELEGRAM_CHANNEL_ID` - идентификатор Telegram-канала, куда будут отправляться фото. Это ссылка на него, например: `@example`.
 
